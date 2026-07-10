@@ -13,7 +13,14 @@ I am currently building my foundations in networking, Linux, programming and sec
 - Develop small scripts and tools
 - Document my progress clearly
 
-## Structure
+## Repository Structure
+
+- [Roadmap](roadmap.md) - My cybersecurity learning plan
+- [Ethics](ethics.md) - Rules and principles for responsible learning
+- [TCP/IP Basics](networking/tcp-ip-basics.md) - Initial networking notes
+- [Linux Basics](linux/linux-basics.md) - Initial Linux notes
+
+## Main Areas
 
 - `networking/` - Notes and labs about TCP/IP, DNS, HTTP, LANs, VLANs and routing
 - `linux/` - Linux commands, permissions, filesystem and terminal usage
