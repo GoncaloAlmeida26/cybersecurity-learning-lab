@@ -38,3 +38,8 @@ ipconfig
 tracert example.com
 nslookup example.com
 netstat -ano
+```
+
+## Notes
+
+I will keep improving this file as I learn more about networking and cybersecurity.
