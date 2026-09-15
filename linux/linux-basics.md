@@ -74,6 +74,64 @@ ss -tuln
 curl example.com
 ```
 
+## Practice Log - Linux Terminal Basics
+
+Date: 2026-09-15
+
+### What I Practiced
+
+- Checking the current directory
+- Listing files and folders
+- Creating directories
+- Moving between directories
+- Creating a text file
+- Writing text into a file
+- Reading file contents
+- Copying a file
+- Renaming a file
+
+### Commands Used
+
+```bash
+pwd
+ls
+mkdir
+cd
+touch
+echo
+cat
+cp
+mv
+```
+
+### Mistake I Made
+
+I tried to use `..` as a command.
+
+I learned that `..` represents the parent directory, but it must be used with a command such as:
+
+```bash
+cd ..
+```
+
+### What I Learned
+
+- `pwd` shows the current directory.
+- `ls` lists files and folders.
+- `mkdir` creates directories.
+- `cd` changes the current directory.
+- `touch` creates an empty file.
+- `echo` can write text into a file using `>`.
+- `cat` displays the contents of a file.
+- `cp` copies files.
+- `mv` moves or renames files.
+
+### What I Need to Review
+
+- Relative and absolute paths
+- File permissions
+- Safe use of commands like `rm`
+
 ## Notes
 
 I will keep improving this file as I learn Linux through practice.
