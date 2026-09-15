@@ -68,33 +68,39 @@ chmod +x script.sh
 
 ```bash
 ip addr
-ping example.com
+ip route
+ping -c 4 example.com
 traceroute example.com
 ss -tuln
-curl example.com
+curl -I https://example.com
+nslookup example.com
 ```
 
 ## Notes
 
 I will keep improving this file as I learn Linux through practice.
 
-## Practice Log - Linux Terminal Basics
+## Practice Log - Linux Fundamentals
 
 Date: 2026-09-15
 
-### What I Practiced
+### Topics Practiced
 
-- Checking the current directory
-- Listing files and folders
-- Creating directories
-- Moving between directories
-- Creating a text file
-- Writing text into a file
-- Reading file contents
-- Copying a file
-- Renaming a file
+- Terminal navigation
+- File and directory creation
+- Reading and writing text files
+- Copying and renaming files
+- Linux file permissions
+- Numeric permissions with `chmod`
+- Reading and searching text files
+- Basic log filtering
+- Processes and background jobs
+- Difference between job numbers and PIDs
+- Basic Linux networking commands
+- DNS lookups
+- HTTP response headers
 
-### Commands Used
+### Commands Practiced
 
 ```bash
 pwd
@@ -106,32 +112,72 @@ echo
 cat
 cp
 mv
+chmod
+grep
+wc
+head
+tail
+ps
+jobs
+kill
+ip addr
+ip route
+ping
+ss
+curl
+nslookup
 ```
 
-### Mistake I Made
-
-I tried to use `..` as a command.
-
-I learned that `..` represents the parent directory, but it must be used with a command such as:
-
-```bash
-cd ..
-```
-
-### What I Learned
+### Key Learnings
 
 - `pwd` shows the current directory.
 - `ls` lists files and folders.
+- `cd ..` moves to the parent directory.
 - `mkdir` creates directories.
-- `cd` changes the current directory.
-- `touch` creates an empty file.
-- `echo` can write text into a file using `>`.
-- `cat` displays the contents of a file.
+- `touch` creates empty files.
+- `echo` can write text into files.
+- `cat` displays file contents.
 - `cp` copies files.
 - `mv` moves or renames files.
+- `>` writes output to a file and replaces previous content.
+- `>>` appends output to the end of a file.
+- Linux permissions are divided into owner, group and others.
+- `r`, `w` and `x` mean read, write and execute.
+- `chmod` changes file permissions.
+- Numeric permissions such as `644`, `600`, `700` and `755` are a shorter way to set permissions.
+- `grep` searches for text inside files.
+- `grep -n` shows line numbers.
+- `grep -i` ignores uppercase and lowercase differences.
+- `grep -v` excludes matching lines.
+- `grep -E "ERROR|WARNING"` searches for multiple patterns.
+- `wc -l` counts lines in a file.
+- `head -n 2` shows the first 2 lines of a file.
+- `tail -n 2` shows the last 2 lines of a file.
+- `ps` shows processes.
+- A PID is a process ID.
+- `jobs` shows background jobs in the current shell.
+- `kill %1` kills job number 1.
+- `kill 2844` kills the process with PID `2844`.
+- `ip addr` shows network interfaces and IP addresses.
+- `ip route` shows routing information and the default gateway.
+- `ping` tests connectivity.
+- `ss -tuln` shows listening TCP and UDP ports.
+- `nslookup` performs DNS lookups.
+- `curl -I` shows HTTP response headers.
 
-### What I Need to Review
 
-- Relative and absolute paths
-- File permissions
-- Safe use of commands like `rm`
+### Shell Operators
+
+- `|` sends the output of one command into another command.
+- Inside `grep -E`, `|` can mean "or", for example `ERROR|WARNING`.
+- `||` runs the second command only if the first command fails.
+- `;` runs commands one after another.
+- `&&` runs the second command only if the first command succeeds.
+
+### Security Notes
+
+- Logs can be filtered to find important events such as failed logins, permission errors and references to privileged users.
+- Searching for keywords like `failed`, `denied`, `root`, `ERROR` and `WARNING` can help identify suspicious activity.
+- Open/listening ports are important because they show services that may be reachable.
+- HTTP response headers can reveal useful security-related information.
+- Public writeups should avoid pasting full cookie values or sensitive output.
